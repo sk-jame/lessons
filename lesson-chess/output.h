@@ -5,8 +5,8 @@
 
 void output_init();
 void output_deInit();
-void output_printBoard(int **board);
+void output_printBoard(int **board, int *dead);
 char *output_moveInvite(EColors isWhiteMove);
-
+void output_printMessage(const char *msg);
 
 #endif // OUTPUT_H

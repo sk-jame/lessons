@@ -69,11 +69,12 @@ inline bool moveFigure(int oldX, int oldY, int x, int y, EFigures fig, EColors c
         }
     }
 
-    if (oldX > 0 && oldY > 0){
+    if (oldX >= 0 && oldY >= 0){
         board[oldX][oldY] = figure_empty;
     }
 
     board[x][y] = fig | SET_COLOR(color);
+
     return true;
 }
 

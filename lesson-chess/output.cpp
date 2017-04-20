@@ -15,7 +15,7 @@ void output_deInit(){
 
 }
 
-void output_printBoard(int **board){
+void output_printBoard(int **board, int* dead){
 #ifdef WINDOWS
     std::system("cls");
 #else
@@ -23,9 +23,19 @@ void output_printBoard(int **board){
     std::system("clear");
 #endif
     // TODO formated output
+
+    /*  print dead before print table   */
+    printf("Dead:\n");
+    int* pDead = dead;
+    while(*pDead != 0){
+        printf("%02x ", *pDead);
+        pDead++;
+    }
+    printf("\n");
+
     printf("#\t");
     for(int i = 0; i < CHESS_BOARD_SIZE; i++){
-        printf("%02c ", INT2LETTER(i));
+        printf("%2c ", INT2LETTER(i));
     }
     printf("\n\n");
 
@@ -43,6 +53,10 @@ void output_printBoard(int **board){
 
 char* output_moveInvite(EColors isWhiteMove){
     printf("%s move: ", (isWhiteMove == chess_white)?("White "):("Black "));
-    scanf("%s", &buffer);
+    scanf("%s", buffer);
     return buffer;
+}
+
+void output_printMessage(const char *msg){
+    printf("%s", msg);
 }

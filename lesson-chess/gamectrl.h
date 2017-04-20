@@ -6,7 +6,7 @@
 void game_init();
 void game_deinit();
 
-int **game_board();
+int** game_board();
 int* game_deadFigures();
 
 EColors game_isWhiteMove();
