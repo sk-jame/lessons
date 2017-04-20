@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    lesson-arrays
+    lesson-arrays \
+    lesson-chess
