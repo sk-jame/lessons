@@ -42,8 +42,9 @@ void game_init(){
     put4figures(1, figure_knight);
     put4figures(2, figure_bishop);
     SET_FIGURE(0, 3, figure_king, chess_black);
-    SET_FIGURE(CHESS_BOARD_SIZE - 1, 3, figure_queen, chess_white);
-    SET_FIGURE(0, 4, figure_king, chess_black);
+    SET_FIGURE(0, 4, figure_queen, chess_black);
+
+    SET_FIGURE(CHESS_BOARD_SIZE - 1, 3, figure_king, chess_white);
     SET_FIGURE(CHESS_BOARD_SIZE - 1, 4, figure_queen, chess_white);
 }
 

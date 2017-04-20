@@ -24,8 +24,11 @@ void output_printBoard(int **board, int* dead){
 #endif
     // TODO formated output
 
+    /* Print message */
+    printf("Pretty simple game.\nWhite figures start from bottom and has digit 2 at start.\n");
+
     /*  print dead before print table   */
-    printf("Dead:\n");
+    printf("\nDead figures:\n");
     int* pDead = dead;
     while(*pDead != 0){
         printf("%02x ", *pDead);
@@ -33,6 +36,7 @@ void output_printBoard(int **board, int* dead){
     }
     printf("\n");
 
+    /*  print board and headers */
     printf("#\t");
     for(int i = 0; i < CHESS_BOARD_SIZE; i++){
         printf("%2c ", INT2LETTER(i));
@@ -52,7 +56,7 @@ void output_printBoard(int **board, int* dead){
 
 
 char* output_moveInvite(EColors isWhiteMove){
-    printf("%s move: ", (isWhiteMove == chess_white)?("White "):("Black "));
+    printf("\n\nType \"exit\" to finish game.\n%s move: ", (isWhiteMove == chess_white)?("White "):("Black "));
     scanf("%s", buffer);
     return buffer;
 }
