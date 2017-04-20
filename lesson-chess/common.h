@@ -13,8 +13,20 @@ typedef enum{
 
 #define SIDECOLORBIT 5
 
-#define IS_FIGURE_WHITE(figure) ((figure & (1 << SIDECOLORBIT))?(true):(false))
-#define IS_FIGURE_BLACK(figure) ((figure & (1 << SIDECOLORBIT))?(true):(false))
+typedef enum{
+    chess_black,
+    chess_white
+}EColors;
+
+
+#define GET_FIGURE(b)     (EFigures)(b & (~(1 << SIDECOLORBIT)))
+#define GET_COLOR(figure) ((figure & (1 << SIDECOLORBIT))?(chess_white):(chess_black))
+#define SET_COLOR(color)  ((color == chess_black)?(0):(1 << SIDECOLORBIT))
+
+#define INT2LETTER(letter) (char((int)letter + 65))
+#define LETTER2INT(letter) ((int)letter - 65)
+
+#define STR2DIGIT(ch)      (ch - '0')
 
 #define CHESS_BOARD_SIZE 8
 

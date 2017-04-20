@@ -10,8 +10,10 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    output.cpp
+    output.cpp \
+    gamectrl.cpp
 
 HEADERS += \
     output.h \
-    common.h
+    common.h \
+    gamectrl.h
